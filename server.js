@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -8,6 +9,11 @@ const userRoute = require('./routes/userRoute');
 const bookingRoute = require('./routes/bookingsRoute');
 
 app.use(express.json());
+app.use(cors({
+    origin: 'webapp-client-iota.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
 app.use('/api/rooms', roomsRoute);
 app.use('/api/users' , userRoute);
