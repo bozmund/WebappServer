@@ -10,7 +10,7 @@ const bookingRoute = require('./routes/bookingsRoute');
 
 app.use(express.json());
 app.use(cors({
-    origin: 'webapp-client-iota.vercel.app',
+    origin: 'https://webapp-client-iota.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
